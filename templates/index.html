@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Generator</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #prompt-form {
+            margin-bottom: 20px;
+        }
+        #prompt-input {
+            padding: 10px;
+            font-size: 16px;
+        }
+        #generated-image {
+            width: 50%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI Image Generator</h1>
+    <form id="prompt-form" method="POST">
+        <label for="prompt">Enter your prompt:</label><br>
+        <input type="text" id="prompt" name="prompt" placeholder="e.g., cat wearing red cape">
+        <br><br>
+        <button type="submit">Generate Image</button>
+    </form>
+    {% if image_url %}
+    <img id="generated-image" src="{{ image_url }}">
+    {% endif %}
+</body>
+</html>
